@@ -139,7 +139,7 @@ export default {
       console.log(user_id)
       await axios
       try {
-        const response = await axios.post('http://localhost:5050/getcart', {
+        const response = await axios.post('http://localhost:3000/getcart', {
           user_id: user_id,
         })
         console.log(response)
@@ -184,7 +184,7 @@ export default {
       console.log(user_id)
       await axios
       try {
-        const response = await axios.post('http://localhost:5050/orders', {
+        const response = await axios.post('http://localhost:3000/orders', {
           user_id: user_id,
           quantity: this.quantity,
           amount: this.IndividualAmount,
@@ -203,7 +203,7 @@ export default {
         product_name: product_name,
       }
       await axios
-        .post('http://localhost:5050/remove_from_cart', data)
+        .post('http://localhost:3000/remove_from_cart', data)
         .then(response => {
           console.log(response.data.message)
           this.flash_message = response.data.message

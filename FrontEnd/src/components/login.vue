@@ -82,7 +82,7 @@ export default {
         role: this.selectedRole,
       }
       axios
-        .post('http://localhost:5050/login', data)
+        .post('http://localhost:3000/login', data)
         .then(response => {
           console.log(response)
           if (response.request.status == 200) {

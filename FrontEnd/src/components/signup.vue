@@ -106,7 +106,7 @@ export default {
         email: this.email,
       }
       axios
-        .post('http://localhost:5050/signup', data)
+        .post('http://localhost:3000/signup', data)
         .then(response => {
           console.log(response)
           if (response.request.status == 200) {

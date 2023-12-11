@@ -92,7 +92,7 @@ export default {
       }
       try {
         const response = await axios.post(
-          'http://localhost:5050/orderTable',
+          'http://localhost:3000/orderTable',
           data,
         )
         console.log(response)

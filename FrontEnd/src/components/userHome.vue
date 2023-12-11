@@ -160,7 +160,7 @@ export default {
       //api call for fetching categories and storing in the categories list
       await axios
       try {
-        const response = await axios.get('http://localhost:5050/getCategories')
+        const response = await axios.get('http://localhost:3000/getCategories')
         console.log(response)
         this.categories = response.data.categories
         console.log(this.categories)
@@ -183,7 +183,7 @@ export default {
       console.log(this.selectCategory)
       try {
         const response = await axios.post(
-          'http://localhost:5050/filterProducts',
+          'http://localhost:3000/filterProducts',
           data,
         )
         console.log(response)
@@ -201,7 +201,7 @@ export default {
         product_name: product_name,
       }
       await axios
-        .post('http://localhost:5050/add_to_cart', data)
+        .post('http://localhost:3000/add_to_cart', data)
         .then(response => {
           console.log(response.data.message)
           this.flash_message = response.data.message
@@ -217,7 +217,7 @@ export default {
       console.log(user_id)
       await axios
       try {
-        const response = await axios.post('http://localhost:5050/getcart', {
+        const response = await axios.post('http://localhost:3000/getcart', {
           user_id: user_id,
         })
         console.log(response)
