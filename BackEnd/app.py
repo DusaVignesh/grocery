@@ -481,6 +481,13 @@ def orders():
     db.session.commit()
     return jsonify({"message":"ordered succesfully"})
 
+
+@app.route("/test",methods=["GET"]) #used in adding   the products into orders table on clicked 
+def orders():
+    return jsonify({"message":"ordered succesfully"})
+
+
+
 @app.route('/export_products/<int:user_id>/', methods=['GET']) #this is a trigger job on manager clicking the download button it downloads csv
 # @cache.cached(timeout = 3600)
 def export_products(user_id):
@@ -502,4 +509,4 @@ db.init_app(app)
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, port=5050)
+    app.run(debug=True, port=3000)
