@@ -483,7 +483,7 @@ def orders():
 
 
 @app.route("/test",methods=["GET"]) #used in adding   the products into orders table on clicked 
-def orders():
+def test():
     return jsonify({"message":"ordered succesfully"})
 
 
