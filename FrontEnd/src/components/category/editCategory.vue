@@ -62,7 +62,7 @@ export default {
         newName: this.newName,
       }
       axios
-        .post('http://localhost:5050/edit_category', data)
+        .post('http://localhost:3000/edit_category', data)
         .then(response => {
           console.log(response)
         })

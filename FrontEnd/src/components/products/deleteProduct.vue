@@ -78,7 +78,7 @@ export default {
       //api call for fetching products and storing in the products list
       await axios
       try {
-        const response = await axios.get('http://localhost:5050/allproducts')
+        const response = await axios.get('http://localhost:3000/allproducts')
         console.log(response)
         this.products = response.data.products
         console.log(this.products)
@@ -89,7 +89,7 @@ export default {
     async setDeleteProduct(product_name) {
       //api call for setting the status="delete" so that it goes for confirmation to the admin to delete product
       await axios
-        .post('http://localhost:5050/setDeleteProduct', {
+        .post('http://localhost:3000/setDeleteProduct', {
           product_name: product_name,
         })
         .then(response => {

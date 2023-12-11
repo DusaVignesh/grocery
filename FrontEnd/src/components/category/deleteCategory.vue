@@ -53,7 +53,7 @@ export default {
     async fetchCategories() {
       try {
         //api call for fetching categories and storing in the categories list
-        const response = await axios.get('http://localhost:5050/getCategories')
+        const response = await axios.get('http://localhost:3000/getCategories')
         console.log(response)
         this.categories = response.data.categories
         console.log(this.categories)
@@ -64,7 +64,7 @@ export default {
     async deleteCategory(categoryId) {
       //api call for deleting category permanently from the db
       await axios
-        .post('http://localhost:5050/deleteCategory', {id: categoryId})
+        .post('http://localhost:3000/deleteCategory', {id: categoryId})
         .then(response => {
           console.log(response.data.message)
           this.fetchCategories()

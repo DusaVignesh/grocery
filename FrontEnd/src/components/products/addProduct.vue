@@ -137,7 +137,7 @@ export default {
       await axios
       try {
         const response = await axios.post(
-          'http://localhost:5050/addProduct',
+          'http://localhost:3000/addProduct',
           data,
         )
         console.log(response)

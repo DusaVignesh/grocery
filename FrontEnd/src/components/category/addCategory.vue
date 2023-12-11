@@ -50,7 +50,7 @@ export default {
         categoryName: this.categoryName,
       }
       axios
-        .post('http://localhost:5050/add_category', data)
+        .post('http://localhost:3000/add_category', data)
         .then(response => {
           console.log(response)
           this.$router.push('/adminHome')

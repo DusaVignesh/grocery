@@ -72,7 +72,7 @@ export default {
       console.log(this.store_manager_id)
       try {
         const response = await axios.get(
-          `http://localhost:5050/export_products/${user_id}`,
+          `http://localhost:3000/export_products/${user_id}`,
         )
         console.log(response)
       } catch (error) {

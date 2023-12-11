@@ -186,7 +186,7 @@ export default {
       //api call for fetching categories and products  and storing in the category_products list
       try {
         const response = await axios.get(
-          'http://localhost:5050/getcategories_products',
+          'http://localhost:3000/getcategories_products',
         )
         console.log(response)
         this.category_products = response.data.category_products
@@ -198,7 +198,7 @@ export default {
     async fetchStoreManagers() {
       //api call for fetching store managers who are requested for apporvals and stored in storeManagers list
       try {
-        const response = await axios.get('http://localhost:5050/store_requests')
+        const response = await axios.get('http://localhost:3000/store_requests')
         console.log(response)
         if (response.request.status == 202) {
           // console.log(response);
@@ -214,7 +214,7 @@ export default {
     async fetchDeleteProducts() {
       //api call for fetching products that i want to delete and storing in the deleteProducts list
       try {
-        const res = await axios.get('http://localhost:5050/deleteProducts')
+        const res = await axios.get('http://localhost:3000/deleteProducts')
         console.log(res)
         if (res.request.status == 201) {
           // console.log(res);
@@ -231,7 +231,7 @@ export default {
     async fetchCategories() {
       //api call for fetching categories and storing in the categories list
       try {
-        const response = await axios.get('http://localhost:5050/getCategories')
+        const response = await axios.get('http://localhost:3000/getCategories')
         console.log(response)
         this.categories = response.data.categories
         console.log(this.categories)
@@ -242,7 +242,7 @@ export default {
     acceptCredentials(userId) {
       //api call for accepting credentials of StoreManager and status updating in db  based on userId
       axios
-        .post('http://localhost:5050/accept', {id: userId})
+        .post('http://localhost:3000/accept', {id: userId})
         .then(response => {
           console.log(response.data.message)
           this.fetchStoreManagers()
@@ -254,7 +254,7 @@ export default {
     rejectCredentials(userId) {
       //api call for rejecting credentials of StoreManager and removing it completely from db based on userId
       axios
-        .post('http://localhost:5050/reject', {id: userId})
+        .post('http://localhost:3000/reject', {id: userId})
         .then(response => {
           console.log(response.data.message)
           this.fetchStoreManagers()
@@ -266,7 +266,7 @@ export default {
     deleteProduct(productId) {
       //api call for deleting the product completely from database using productId
       axios
-        .post('http://localhost:5050/deleteProduct', {id: productId})
+        .post('http://localhost:3000/deleteProduct', {id: productId})
         .then(response => {
           console.log(response.data.message)
           this.fetchDeleteProducts()
@@ -278,7 +278,7 @@ export default {
     undeleteProduct(productId) {
       //api call for deleting the product completely from database using productId
       axios
-        .post('http://localhost:5050/undeleteProduct', {id: productId})
+        .post('http://localhost:3000/undeleteProduct', {id: productId})
         .then(response => {
           console.log(response.data.message)
           this.fetchDeleteProducts()
